@@ -2,7 +2,7 @@ package physics
 
 import "go.uber.org/dig"
 
-func buildContainer(c *dig.Container) error {
+func BuildContainer(c *dig.Container) error {
 	if err := c.Provide(NewConfig); err != nil {
 		return err
 	}
