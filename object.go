@@ -10,16 +10,16 @@ type Object struct {
 }
 
 type ObjectFactory struct {
-	Cfg *Config
+	cfg *Config
 }
 
 func NewObjectFactory(cfg *Config) *ObjectFactory {
-	return &ObjectFactory{Cfg: cfg}
+	return &ObjectFactory{cfg: cfg}
 }
 
-func (o *ObjectFactory) NewObject(body *box2d.B2Body, shape box2d.B2CircleShape, density float64) *Object {
+func (o *ObjectFactory) NewObject(body *box2d.B2Body, shape box2d.B2ShapeInterface, density float64) *Object {
 	return &Object{
 		Body:    body,
-		Fixture: body.CreateFixture(&shape, density),
+		Fixture: body.CreateFixture(shape, density),
 	}
 }
