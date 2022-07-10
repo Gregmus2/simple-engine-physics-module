@@ -1,0 +1,6 @@
+physics:
+  enable: true
+  scale: 100
+  gravity:
+    x: 0.0
+    y: -8.0
