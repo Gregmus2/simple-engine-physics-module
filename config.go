@@ -8,6 +8,10 @@ import (
 	"os"
 )
 
+type physicsConfig struct {
+	Physics Config
+}
+
 type Config struct {
 	Scale   float64 `default:"100"`
 	Gravity struct {
@@ -30,7 +34,7 @@ func (c *Config) UnmarshalYAML(unmarshal func(interface{}) error) error {
 }
 
 func NewConfig() (*Config, error) {
-	cfg := &Config{}
+	cfg := &physicsConfig{}
 
 	yamlFile, err := ioutil.ReadFile("config.yaml")
 	if !os.IsNotExist(err) {
@@ -44,5 +48,5 @@ func NewConfig() (*Config, error) {
 		}
 	}
 
-	return cfg, nil
+	return &cfg.Physics, nil
 }
