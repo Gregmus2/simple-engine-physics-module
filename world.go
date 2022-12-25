@@ -14,7 +14,7 @@ func NewWorld(cfg *Config) (*box2d.B2World, common.UpdateActionOut) {
 
 	return &world, common.UpdateActionOut{
 		Action: func(dt int64) {
-			world.Step(float64(dt*1000), velocityIterations, positionIterations)
+			world.Step(float64(dt)/1000, velocityIterations, positionIterations)
 		},
 	}
 }

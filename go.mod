@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/ByteArena/box2d v1.0.2
-	github.com/Gregmus2/simple-engine v0.4.0
+	github.com/Gregmus2/simple-engine v0.4.1
 	github.com/creasty/defaults v1.6.0
 	github.com/pkg/errors v0.9.1
 	go.uber.org/dig v1.8.0
